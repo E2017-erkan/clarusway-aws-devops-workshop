@@ -26,10 +26,10 @@ Resources:
               systemctl enable httpd
               cd /var/www/html/
               sudo chmod -R 777 /var/www/html/
-              wget https://raw.githubusercontent.com/HasanKaval/001_AWS_DevOps_WS/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/index.html
-              wget https://raw.githubusercontent.com/HasanKaval/001_AWS_DevOps_WS/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat0.jpg
-              wget https://raw.githubusercontent.com/HasanKaval/001_AWS_DevOps_WS/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat1.jpg
-              wget https://raw.githubusercontent.com/HasanKaval/001_AWS_DevOps_WS/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat2.jpg 
+              wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/index.html
+              wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat0.jpg
+              wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat1.jpg
+              wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat2.jpg
       Tags:
         - Key: Name
           Value: Kittens-Carousel
