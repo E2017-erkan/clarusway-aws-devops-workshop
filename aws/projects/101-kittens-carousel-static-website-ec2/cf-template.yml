@@ -11,7 +11,7 @@ Resources:
       InstanceType: t2.micro
       KeyName: ozer
       SecurityGroups:
-        - HTTPandSSH
+        - HHTPandSSH
       UserData: 
         Fn::Base64:                                # YAML makes userdata much cleaner
           !Sub |
@@ -21,11 +21,11 @@ Resources:
               yum update -y
               #install apache server
               yum install httpd -y
-              # start apache server
+              #start apache server
               systemctl start httpd
               systemctl enable httpd
-              cd /var/www/html/
               sudo chmod -R 777 /var/www/html/
+              cd /var/www/html/
               wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/index.html
               wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat0.jpg
               wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop2/master/aws/projects/101-kittens-carousel-static-website-ec2/static-web/cat1.jpg
