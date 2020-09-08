@@ -1,0 +1,46 @@
+1  lsblk
+    2  sudo file -s /dev/xvdf
+    3  sudo mkfs -t ext4 /dev/xvdf
+    4  sudo file -s /dev/xvdf
+    5  sudo mkdir /mnt/2nd-vol/
+    6  cd /mnt/2nd-vol/
+    7  ls
+    8  cd
+    9  sudo mount /dev/xvdf /mnt/2nd-vol/
+   10  lsblk
+   11  df
+   12  df -h
+   13  cd /mnt/2nd-vol
+   14  ls
+   15  sudo touch guilewashere.txt
+   16  ls
+   17  lsblk
+   18  df -h
+   19  sudo resize2fs /dev/xvdf
+   20  df -h
+   21  cd /mnt/2nd-vol/
+   22  ls
+   23  sudo reboot now
+   24  lsblk
+   25  df -h
+   26  sudo file -s /dev/xvdf
+   27  sudo mount /dev/xvdf /mnt/2nd-vol/
+   28  lsblk
+   29  df -h
+   30  history
+
+lsblk                           disks and partitions
+sudo file -s /dev/xvdf          to check the format of the disks
+sudo mkfs -t exf4               to format the disk 
+sudo mkdir /mnt/2nd-volume/     new directory under mnt
+mount /dev/xvdf                 mounting the new volume
+lsblk                           to check the disk again
+df                              to show the files related to filesystem
+Under Amazon/EC2/Volumes, change the created volume's size to 4GB.
+lsblk                           check the new volume if it is turned to 4GB
+df -h                           to check the new disk file system, you will see the disk as 2GB
+sudo resize2fs /dev/xvdf        to resize the new disk
+df -h                           to check the new disk again 
+sudo reboot now                 to reboot the instance
+After reboot, we need to mount the disk again.
+sudo mount /dev/xvdf /mnt/2nd-volume/   to mount the same disk again
