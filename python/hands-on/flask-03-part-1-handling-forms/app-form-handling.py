@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home ():
-    return render_template ("index.html", name = "tyler")
+    return render_template ("index.html", name = "Erkan")
 
 
 # Create a function named `home` which uses template file named `index.html` given under `templates` folder,
