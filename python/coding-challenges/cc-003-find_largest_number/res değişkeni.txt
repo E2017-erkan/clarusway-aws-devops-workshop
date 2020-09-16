@@ -1,0 +1,1 @@
+İşlevin son satırı, işlevden çıkan ve res değişkeninin değerini çevitiyor.
