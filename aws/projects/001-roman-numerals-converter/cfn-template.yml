@@ -1,10 +1,12 @@
 AWSTemplateFormatVersion: 2010-09-09
 
 Description: >
-  The Roman Numerals Converter Application aims to convert the given number to the Roman numerals. The application is to be coded in Python and deployed as a web application with Flask on AWS Elastic Compute Cloud (EC2) Instance using AWS Cloudformation Service
+  The Roman Numerals Converter Application aims to convert the given number to the Roman
+  numerals. The application is to be coded in Python and deployed as a web application with
+  Flask on AWS Elastic Compute Cloud (EC2) Instance using AWS Cloudformation Service.
 
 Resources:
-  RomanNumeralConverterSecurityGroup:
+  RomanNumeralsConverterSC:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Enable HTTP for Apache Web Server
@@ -24,8 +26,8 @@ Resources:
       InstanceType: t2.micro
       KeyName: ozer
       SecurityGroupIds:
-        - !Ref RomanNumeralConverterSecurityGroup
-      Tags:                    
+        - !Ref RomanNumeralsConverterSC
+      Tags:                
         - Key: Name
           Value: !Sub Web Server of ${AWS::StackName} Stack   
       UserData:
@@ -41,8 +43,8 @@ Resources:
             sudo chmod -R 777 ./
             wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/app.py
             cd templates
-           wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/templates/index.html
-              wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/templates/result.html
+            wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/templates/index.html
+            wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/templates/result.html
             cd ..
             python3 app.py
 Outputs:
@@ -50,4 +52,4 @@ Outputs:
     Value: !Sub 
       - http://${PublicAddress}
       - PublicAddress: !GetAtt WebServerHost.PublicDnsName
-    Description: Roman Numerals Converter Application URL
+    Description: Roman Numerals Converter URL
