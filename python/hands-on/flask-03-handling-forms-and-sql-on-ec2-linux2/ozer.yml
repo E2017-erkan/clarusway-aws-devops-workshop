@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: This template creates an EC2 Instance which enables SSH connection. 
+​
+Resource:
+  ErkanCFInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-02354e95b39ca8dec 
+      InstanceType: t2.micro
+      KeyName: ozer-cfdemo-kp
+      SecurityGroups:
+        - Erkan-cfdemo-sg
+      Tags:
+        - Key: Name
+          Value: erkan-cf-instance
