@@ -38,7 +38,8 @@ Resources:
             yum update -y
             yum install python3 -y
             pip3 install flask
-            yum install git -y
+            cd /home/ec2-user
+            yum install git -y  
             mkdir templates
             sudo chmod -R 777 ./
             wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/001-roman-numerals-converter/app.py
