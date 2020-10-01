@@ -1,4 +1,4 @@
-# Hands-on DB-04 : Restoring RDS DB Instance from Manual Snapshot and Point in Time
+# Hands-on DB-03 : Restoring RDS DB Instance from Manual Snapshot and Point in Time
 
 Purpose of the this hands-on training is to give understanding to take a manual snapshot from RDS DB instance, restore RDS DB instance from this snapshot, and also restore RDS DB instance from a point in time. We'll use the RDS crated in former session.(Hands-on DB-01)
 
@@ -151,6 +151,7 @@ Security Group
 
 ```bash
 sudo apt update -y
+
 ```
 
 - Install the `mariadb-client`.
@@ -161,10 +162,11 @@ sudo apt-get install mariadb-client -y
 
 ### STEP 2 - Connecting to RDS DB Instance
 
+
 - Connect the RDS MySQL DB instance with admin user, and paste the password when prompted.
 
 ```bash
-mysql -h [Your RDS Endpoint] -u admin -p
+mysql -h Your RDS Endpoint -u admin -p
 ```
 
 - Show default databases in the MySQL server.
@@ -289,7 +291,7 @@ EXIT;
 
 - For `point in time recovery` PART (PART-4), please note down the current time. (Exp: August 12, 2020, 22:45:34, UTC +3) and let the students know:
 
-     -enter the time:
+     -enter the time:14 03 30
 
 ## Part 2 - Taking a Snapshot from RDS DB Instance
 
