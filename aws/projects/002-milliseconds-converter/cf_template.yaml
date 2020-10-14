@@ -1,6 +1,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
   Cloudformation template for milliseconds converter application. This app runs on application load balancer. In addition, it is observed by Autoscaling Group
+  
 Resources:
   ALBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -11,6 +12,7 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
+  
   WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -24,6 +26,7 @@ Resources:
           FromPort: 80
           ToPort: 80
           SourceSecurityGroupId: !GetAtt ALBSecurityGroup.GroupId
+  
   WebServerLaunchTemplate:
     Type: AWS::EC2::LaunchTemplate
     Properties:
@@ -33,11 +36,11 @@ Resources:
         KeyName: ozer
         SecurityGroupIds: 
           - !GetAtt WebServerSecurityGroup.GroupId
-        TagSpecifications: 
-          - ResorceType: instance
-            Tag: 
+        TagSpecifications:
+          - ResourceType: instance
+            Tags:
               - Key: Name
-                Value: !Sub Web Server of ${AWS::StackName}
+                Value: !Sub Web Server of ${AWS::StackName} 
         UserData: 
           Fn::Base64:
             !Sub |
@@ -51,8 +54,8 @@ Resources:
               curl -s --create-dirs -o "/home/ec2-user/templates/result.html" -L "$FOLDER"templates/result.html
               curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"app.py
               python3 /home/ec2-user/app.py
-      
-WebServerTargetGroup:
+
+  WebServerTargetGroup:
     Type: "AWS::ElasticLoadBalancingV2::TargetGroup"
     Properties:
       Port: 80
