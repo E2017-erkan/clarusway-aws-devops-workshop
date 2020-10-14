@@ -73,8 +73,8 @@ Resources:
             wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/002-milliseconds-converter/app.py
             mkdir templates
             cd templates
-            wget https://github.com/E2017-erkan/clarusway-aws-devops-workshop/blob/master/aws/projects/002-milliseconds-converter/templates/index.html
-            wget https://github.com/E2017-erkan/clarusway-aws-devops-workshop/blob/master/aws/projects/002-milliseconds-converter/templates/result.html
+            wget https://raw.github.com/E2017-erkan/clarusway-aws-devops-workshop/blob/master/aws/projects/002-milliseconds-converter/templates/index.html
+            wget https://raw.github.com/E2017-erkan/clarusway-aws-devops-workshop/blob/master/aws/projects/002-milliseconds-converter/templates/result.html
             cd ..
             python3 app.py
       SecurityGroups:
