@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
-  Cloudformation template for milliseconds converter application. This app runs on application load balancer. In addition, it is observed by Autoscaling Group
+Phonebook Application (Python Flask) deployed on AWS Application Load Balancer with Auto Scaling and Relational Database Service using AWS Cloudformation
   
 Resources:
   ALBSecurityGroup:
@@ -44,18 +44,17 @@ Resources:
         UserData: 
           Fn::Base64:
             !Sub |
-              #!/bin/bash
+              #! /bin/bash
               yum update -y
               yum install python3 -y
               pip3 install flask
-              cd /home/ec2-user
-              wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/002-milliseconds-converter/app.py
-              mkdir templates
-              cd templates
-              wget https://raw.github.com/E2017-erkan/clarusway-aws-devops-workshop/blob/master/aws/projects/002-milliseconds-converter/templates/index.html
-              wget https://raw.github.com/E2017-erkan/clarusway-aws-devops-workshop/blob/master/aws/projects/002-milliseconds-converter/templates/result.html
-              cd ..
-              python3 app.py
+              TOKEN="c6cdec26119f4077815699b84ab01915abe8c27f"
+              FOLDER="https://$TOKEN@raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/002-milliseconds-converter/"
+              curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
+              curl -s --create-dirs -o "/home/ec2-user/templates/result.html" -L "$FOLDER"templates/delete.html
+              curl -s --create-dirs -o "/home/ec2-user/templates/result.html" -L "$FOLDER"templates/add-update.html
+              curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"phonebook-app.py
+              python3 /home/ec2-user/phonebook-app.py
 
   WebServerTargetGroup:
     Type: "AWS::ElasticLoadBalancingV2::TargetGroup"
