@@ -1,0 +1,55 @@
+İKİ ADET CLI KOMUTU VAR 
+1. AWS CLI
+2. eb CLI
+
+
+pip3 -V
+pip install awsebcli
+pip3 install awsebcl update upgrade ederken error verdiğinde
+export PATH=~/.local/bin:$PATH yazıyoruz ve eb --version yazıp kontrol ediyoruz
+
+uname -a yada lsb_release -a yada cat /etc/lsb-release işletim sisteminin versiyonunu ve bilgisini verir.(distro bilgisi)
+
+-eb init application'ı oluşturuyor
+-eb create environment'ı oluşturuyor
+
+-eb open terminalden web sitesini chromda açıyor
+
+-eb help 
+
+-eb console
+
+-eb status  konsol bilgilerini gösterir
+
+-eb config environment'ı değiştiriyor
+
+nano ile index.html'in içinde değişiklik yaptığımızda 
+-eb deploy diyoruz ve otomatik olarak application version değişimi yapıyor.
+
+environment terminate etmek komut için :
+-eb terminate
+application delete için aws cli'ından siliniyor
+-aws elasticbeanstalk delete-application --application-name php-v1
+
+
+
+database li environment oluşturulması:
+eb create --vpc.elbpublic --database.instance db.t2.micro --database.engine mysql --elb-type application --service-role aws-elastic-beanstalk-service-role
+
+inctance üzerinden database açılış komutları:
+sudo apt install mariadb-client
+mysql -h (RDS Database üzerindeki Endpoint) -u ebroot -p 
+şifre girip bağlanmazsa RDS Database üzerinde VPC security grups'u tıklayıp inbound Rule'da source'u herkeze aç anywhere yazıyoruz
+Mysql [(none)]> SHOW DATABASES;
+Mysql [(none)]> USE ebdb
+Mysql [(ebdb)]> SHOW TABLES;
+Mysql [(ebdb)]> SELECT * FROM entries; 
+
+deployment methodları :(aplication versiyon değişikliklerinde AWS nin oluşturduğu methodlar
+bluegreen tamamı değişiyor
+immutuble  autoscaling group sayısı nekadarsa aynı sayıda sokup değiştiriyor
+additional add batch birtane yedek  yapıpı kontrollü çıkartıyor
+rollingde tektek değiştiriyor
+
+https://blog.shikisoft.com/which_elastic_beanstalk_deployment_should_you_use/
+

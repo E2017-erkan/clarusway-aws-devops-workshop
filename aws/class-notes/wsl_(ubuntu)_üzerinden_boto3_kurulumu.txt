@@ -1,0 +1,12 @@
+
+	WSL
+
+önce pip varmı bak 
+pip -V
+eğer yoksa
+sudo apt install python3-pip
+
+sudo apt update
+sudo apt upgrade
+pip3 install boto3
+pip show boto3 (boto 3 ü gösterir)

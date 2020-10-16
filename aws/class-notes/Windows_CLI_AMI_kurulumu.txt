@@ -1,0 +1,5 @@
+windows server inctance üzerinden CLI kurulumu
+
+configure security group RDP (REMOTE DESKTOP PROTOKOL) seçilecek (port 3389)
+
+inctance bağlantısı(connect) RDP olarak yapılacak
