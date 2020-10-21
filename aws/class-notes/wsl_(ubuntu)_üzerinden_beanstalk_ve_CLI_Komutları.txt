@@ -9,7 +9,7 @@ https://awscli.amazonaws.com/AWSCLIV2-2.0.30.msi adresinden indirip install ediy
 
 INSTANCE'a AWS cli kurmak için; (ubuntu inctance)
 -sudo apt install unzip
-- $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 - unzip awscliv2.zip
 - sudo ./aws/install
 

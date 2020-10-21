@@ -1,7 +1,8 @@
 
 	WSL
 
-önce pip varmı bak 
+önce pip varmı bak
+sudo apt update 
 pip -V
 eğer yoksa
 sudo apt install python3-pip
