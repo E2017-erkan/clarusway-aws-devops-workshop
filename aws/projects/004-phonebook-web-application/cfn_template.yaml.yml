@@ -63,7 +63,7 @@ Resources:
                 wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/004-phonebook-web-application/phonebook-app.py
                 cd templates
                 wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/004-phonebook-web-application/templates/index.html
-                wgethttps://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/004-phonebook-web-application/templates/add-update.html
+                wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/004-phonebook-web-application/templates/add-update.html
                 wget https://raw.githubusercontent.com/E2017-erkan/clarusway-aws-devops-workshop/master/aws/projects/004-phonebook-web-application/templates/delete.html
                 cd ..
                 python3 /home/ec2-user/app.py
