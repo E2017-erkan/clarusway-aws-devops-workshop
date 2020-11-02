@@ -1,0 +1,1 @@
+Sertifika Transparency, Sertifika Yetkilileri tarafından verilen sertifikaları neredeyse gerçek zamanlı olarak izlemek ve denetlemek için açık bir frameworkdur. Bir CA'nın ürettikleri tüm sertifikaları günlüğe kaydetmesini zorunlu kılarak, site sahipleri hatalı verilen sertifikaları hızlı bir şekilde belirleyebilir ve sahte bir CA'yı tespit etmek çok daha kolay hale gelir.
