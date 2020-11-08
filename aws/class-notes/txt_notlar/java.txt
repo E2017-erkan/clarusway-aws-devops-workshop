@@ -1,0 +1,7 @@
+JAVA
+ec2 ->
+sudo yum install java-11-amazon-corretto -ypublic class Hello{
+    public static void main(String[] args) {
+        System.out.println("Merhaba Dünya...");
+    }
+}javac Hello.javajava Hellojar -cvfe Hello.jar Hello Hello.classjava -jar Hello.jar (edited) 

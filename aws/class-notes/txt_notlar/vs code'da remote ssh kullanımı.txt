@@ -1,0 +1,6 @@
+Matt - Instructor
+• You can use VS Code's Remote SSH Extension to connect to your EC2 instance
+• Open up your VS Code editor.
+• Click on the Extensions icon.
+• Write down Remote - SSH on the search bar.
+• Click on the first option on the list.

@@ -1,0 +1,44 @@
+docker ps
+docker inspect
+
+docker run -d -p 80:5000 --name myweb clarusways/cw_web_flask1
+docker run -d -p 90:80 -it --name mynginx nginx bash
+
+docker image lar immutuble değiştirilemiyor
+(konteynırın içindeki bilgiyi tutmak için konteynırın içine volume,bind moun yüklüypruz ve memory'de tutuluyor)
+
+docker run imageName
+
+FROM ubuntu
+COPY . /app
+RUN apt-get install python3.6
+
+
+dockerları start etmek için verilen komut
+for i in clarus1st clarus2nd clarus3rd clarus4th
+> do
+> docker start $i
+> done
+
+dockerdan exit ile çıkarsan docker stop eder ctrl pq yaparsan stop etmez tekrar çalıtırmamız lazım.
+
+
+
+docker start 4e6 && docker attach 4e6 (docker konteynırı çalıştırma ve içine girme)
+docker exec -it 458 
+
+
+CMD python3 /app/index.py
+
+docker ölünce veri kalmıyor bunun için volume'e ihtiyacımız var.
+
+---sudo systemctl status docker (docker yüklü ec2 'yu çalıştırdıktan sonra run ve enable durumunu görüyoruz)
+
+---docker images (ec2'da neler var bakıyoruz)
+
+---docker run -i -t ubuntu (ubuntuyu kurduğumuzda ec2'da konteynırın içine bağlandık root kürsörü geldi)(burada mini bir işletim sistemi oluşuyor image boyutunda)
+
+volume konteynırı ezer
+
+
+

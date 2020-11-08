@@ -1,0 +1,18 @@
+AWS LOG Agent activate on CLI
+sudo yum install -y awslogs
+sudo systemctl start awslogsd
+sudo systemctl enable awslogsd.service awslogs.conf[/var/log/nginx/access.log]
+datetime_format = %b %d %H:%M:%S
+file = /var/log/nginx/access.log
+buffer_duration = 5000
+log_stream_name = {instance_id}
+initial_position = start_of_file
+log_group_name = AccessLog
+[/var/log/nginx/error.log]
+datetime_format = %b %d %H:%M:%S
+file = /var/log/nginx/error.log
+buffer_duration = 5000
+log_stream_name = {instance_id}
+initial_position = start_of_file
+log_group_name = ErrorLogsudo systemctl stop awslogsd
+sudo system start awslogsd

@@ -1,0 +1,1 @@
+--tail hosts yazdığımızda (tail komutu dosyada yazılanları gösteriyor)

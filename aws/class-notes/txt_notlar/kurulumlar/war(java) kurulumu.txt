@@ -1,0 +1,6 @@
+sudo yum update -y
+sudo amazon-linux-extras install java-openjdk11 -y
+java -version
+wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+java -jar jenkins.war --httpPort=8080
+cat ~/.jenkins/secrets/initialAdminPassword

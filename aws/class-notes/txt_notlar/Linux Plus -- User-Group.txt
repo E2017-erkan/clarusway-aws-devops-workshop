@@ -1,0 +1,13 @@
+Linux Plus -- User / Group
+User (UN = user name)whoami, w, id, who am i, su - username/etc/passwd --> local user database
+/bin/bash --> login shelluseradd -m -d /home/newUN - c "description" newUN
+adduser newUN
+useradd -d /home/aaron -m -s/bin/bash -c aaron, Work Phone,Work Phone,OtherInfo aaron && passwd aaronuserdel -r UNtail -1 /etc/passwd => prints last line of passwd file
+usermod -c "new description" UN => to change user properties$ passwd => to change password
+# passwd UN/etc/shadow => user passwords are stored here
+/etc/login.defs => password settings
+grep ^PASS /etc/login.defsgroupadd newGN
+usermod -aG GN UN =>adding users to groupsetc/group => specifies group membershipgroups => shows which group you belong to
+groupmod => to change the group name
+groupmod -n newGN oldGNgroupdel GNgpasswd -a UN GN => adding a user to a group
+gpasswd -d UN GN => removing a user from a group

@@ -1,0 +1,3 @@
+-- docker node rm <down olan node ID>  (down olan nodu silmek için kullanılır)
+ 
+151. satırdan itibaren tekrarla 18.30 ders saati

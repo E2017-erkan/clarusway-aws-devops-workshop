@@ -1,0 +1,18 @@
+SQL / MySQL / Workbench
+
+/mnt/c/users/hans/Desktop/Clarusway/0007_Workspace/zulu
+INSERT INTO Personel_Info
+(ID_number,Name,Surname,Gender)
+VALUES
+('007','James','Bond','Male');MariaDBsudo yum install mariadb-server -y
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+sudo systemctl enable mariadbmysql -u root
+SHOW DATABASES;
+USE mysqlexit mariaDB
+sudo mysql_secure_installationCREATE DATABASE clarusdb;
+CREATE USER clarususer IDENTIFIED BY 'clarus1234';
+GRANT ALL ON clarusdb.* TO clarususer IDENTIFIED BY 'clarus1234' WITH GRANT OPTION;
+mysql -u clarususer -pUbuntu Client version
+sudo apt update && sudo apt upgrade -y
+sudo apt-get install mariadb-client

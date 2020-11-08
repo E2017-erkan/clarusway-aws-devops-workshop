@@ -1,0 +1,8 @@
+WordPRess 
+sudo systemctl status httpd
+php --version
+sudo systemctl status mariadb
+sudo yum install -y mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+sudo mysql_secure_installationmysql -u root -p

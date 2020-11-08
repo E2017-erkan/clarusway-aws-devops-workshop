@@ -1,0 +1,12 @@
+---find -name test.txt (dosa bulmaya yarıyor)
+
+---find . -iname FILE* (büyük küçük harf duyarlı arama yapıyor)
+
+---echo "lets create a file" (sadece ekranda gösterir)
+---echo "lets create a file" > file.txt yazarsak yeni dosya içine atmış oluruz)
+
+---grep "lets" file.txt (dosyada bir metin yada kelime aratması yapmak için kullanılır.)
+---grep -v "lets" file.txt (dosyada yazılanları lets'i çıkararak verir)
+---grep -c "lets" file.txt (dosyada bu yazdığımızdan kaç tane var sayısını veriryor)
+
+

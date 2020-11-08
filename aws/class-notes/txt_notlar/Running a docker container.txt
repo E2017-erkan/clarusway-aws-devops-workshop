@@ -1,0 +1,18 @@
+Running a Docker Container
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+docker version
+newgrp docker
+docker infosudo docker infosudo docker run -i -t ubuntu /bin/bash
+sudo docker run --name clarusway -i -t ubuntu /bin/bash
+docker rm #to remeove present containersudo docker start clarusway #or
+sudo docker start 2f5a96f3ccdesudo docker attach claruswaydocker inspect clarusway # get details about the containerdocker inspect --format='{{ .State.Running }}' clarusway#/var/lib/docker/containersdocker exec -it containername shcat /etc/*relea*docker run -d -p 80:80 -it --name hasan containername shdocker logs -f CNdocker stop CN-p host_port : container_port (running port mapping)
+docker run -d -p 8080:80 apache_imagefor i in clarus1st clarus2nd clarus3rd clarus4th
+> do
+> docker start $i
+> donefor i in `ls .`ping -c 4 clarus4thdocker exec -it clarus4th shdocker rm -f $(docker ps -aq)docker network prunedocker port ngDocker Volumedocker volume create VN
+docker volume inspect VN #check mountpoint for storagepointdocker run -it -v VN:/DN(ex. /sample) imgN CLIN
+docker container run -it -v VN:/DirectoryN:ro imgN CLIDOCKER Imagesdocker login
+docker push hansk001/flask-appdocker build -t try/flask:2.0 -f Dockerfile-flask .

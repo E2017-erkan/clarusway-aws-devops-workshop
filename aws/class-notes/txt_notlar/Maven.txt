@@ -1,0 +1,2 @@
+MAVEN
+aws cloudformation create-stack --stack-name maven-experiment-stack --template-body file://Comments in XML   <!-- ............................... -->

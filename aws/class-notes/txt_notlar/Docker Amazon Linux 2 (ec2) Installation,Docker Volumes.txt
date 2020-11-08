@@ -1,0 +1,14 @@
+Docker Amazon Linux 2 (ec2) Installation / Docker Volumes
+sudo yum update -ysudo amazon-linux-extras install dockersudo service docker startsudo usermod -a -G docker ec2-userdocker versionnewgrp dockerdocker infosudo docker run --name clarusway -it ubuntu /bin/sh
+sudo docker start clarusway
+sudo docker attach clarusway
+sudo docker inspect --format='{{ .State.Running }}' clarusway
+sudo docker rm clarusway
+docker stats clarusway
+docker kill/pause/unpause clarusway
+docker stop clarusway
+docker top clarusway
+sudo docker history clarusway--> /var/lib/docker directorydocker volume create firstvolume
+docker volume inspect firstvolume
+docker container run -it -v firstvolume:/sample alpine sh  #-v or --volumedocker container ls -a #Alpine
+docker container run -it -v firstvolume:/try3:ro centos sh

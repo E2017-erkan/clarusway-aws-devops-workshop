@@ -1,0 +1,3 @@
+copy files from EC2 to local
+ scp -i ~/key-pem-folder/key.pem -r ec2-user@(ec2-DNS):/home/ec2-user/alınacak dosya - klasör adıSSH Forwardingeval "$(ssh-agent)"
+ssh-add ....keypair yolu

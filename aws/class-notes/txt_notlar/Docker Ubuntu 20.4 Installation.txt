@@ -1,0 +1,17 @@
+Docker Ubuntu 20.4 Installation
+uname -a or -r  # to check your linux versionsudo apt update && apt upgrade -ysudo apt-get updatesudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-commoncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -sudo apt-key fingerprint 0EBFCD88lsb_release -cs # check your Ubuntu distrosudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"sudo apt-get updatesudo apt-get install docker-ce docker-ce-cli containerd.ioapt-cache madison docker-cesudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04sudo apt install apt-transport-https ca-certificates curl software-properties-commoncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"sudo apt updateapt-cache policy docker-cesudo apt install docker-cesudo systemctl status docker
+ DigitalOcean
+How To Install and Use Docker on Ubuntu 20.04 | DigitalOcean
+Docker is an application that simplifies the process of managing application processes in containers. In this tutorial, you'll install and use Docker Community Edition (CE) on Ubuntu 20.04. You'll install Docker itself, work with containers and images (213 kB)
+

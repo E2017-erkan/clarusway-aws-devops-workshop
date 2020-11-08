@@ -1,0 +1,5 @@
+Arkadaşlar,
+Cloudformation template oluşturuken subnetl ID'lere ihtiyaç olduğunda bunları AWS consoldan kopyalamak biraz zahmetli olabiliyor. bunun yerine terminalden : 
+---aws ec2 describe-subnets --query Subnets[*].SubnetId 
+komutunu çalıştırısanız size subnet Id'leri dönecektir.
+İyi çalışmalar

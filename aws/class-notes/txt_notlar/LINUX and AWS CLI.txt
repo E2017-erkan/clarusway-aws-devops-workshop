@@ -1,0 +1,36 @@
+LINUX and AWS CLI
+#getting SubNet IDs through CLIaws ec2 describe-subnets --no-paginate --filters "Name=default-for-az,Values=true" | egrep "(VpcId)|(SubnetId)">aws iam list-users
+>aws configure
+>aws S3 ls
+>aws ec2 help
+awcd .aws
+cat config
+cat credidentialsecho $SHELL
+printenv
+env
+cat /etc/passwd
+which bash
+echo $PS1
+export PS1="\t \j "
+sleep 20 &
+export PS1="Saat: \t \n calisan isler: \j "
+export PS1="{ \! } ==> "
+chmod -x hello.sh
+./hello.sh
+bash hello.sh#!/bin/bash
+read -p "first number: " num1
+read -p "second number: " num2
+let total=num1+num2
+echo $(( total++ ))
+echo $total
+echo $(( total - num1 ))******************************************#!/bin/bash
+read -p "kac yas? " age
+if [ $age -ge 16 ]
+then
+        echo "You can drive"
+elif [ $age -eq 15 ]
+then
+        echo "You can drive next year"
+else
+        echo "YOu can't drive"
+fi*******************

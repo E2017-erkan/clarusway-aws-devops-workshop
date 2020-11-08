@@ -1,0 +1,2 @@
+Linux - how to find out over sized part of a machine
+du -h --max-depth=1 /ile ana dizinden itibaren sorguya başlarım, ana dizinimizin altında var in altı şişik görünüyorsa:du -h --max-depth=1 /varile devam ederim. var altında var sayalım ki lib şişik gözüküyor:du -h --max-depth=1 /var/libgelen çıktıya göre docker altında yoğunluk varsa:du -h --max-depth=1 /var/lib/docker
