@@ -1,0 +1,443 @@
+    1  kubectl get no
+    2  clear
+    3  mkdir docker-hub-demo
+    4  cd docker-hub-demo
+    5  ls
+    6  vi svc.yml
+    7  vi docker-hub-demo.yml
+    8  ls
+    9  cd 
+   10  ls
+   11  cd docker-hub-demo/
+   12  ls
+   13  vi docker-secret.yml
+   14  cd /etc/docker/
+   15  ls
+   16  sudo mkdir certs.d/ip-172-31-82-125.ec2.internal:5000/
+   17  sudo mkdir -p certs.d/ip-172-31-82-125.ec2.internal:5000/
+   18  cd certs.d/ip-172-31-82-125.ec2.internal\:5000/
+   19  ls
+   20  sudo vi domain.crt
+   21  docker pull ip-172-31-82-125.ec2.internal:5000/nginx
+   22  docker rmi ip-172-31-82-125.ec2.internal:5000/nginx:latest
+   23  cd
+   24  ls
+   25  aws ecr get-login
+   26  exit
+   27  aws ecr get-login
+   28  sudo apt  install awscli
+   29  aws ecr get-login
+   30  aws ecr get-login --help
+   31  aws ecr get-login help
+   32  aws ecr get-login --region us-east-1
+   33  exit
+   34  aws ecr get-login 
+   35  aws ecr get-login --region us-east-1
+   36  aws ecr get-login-password --region us-east-1 
+   37  aws configure
+   38  aws ecr get-login-password --region us-east-1 
+   39  aws ecr get-login
+   40  clear
+   41  exit
+   42  aws ecr get-login-password --region us-east-1 
+   43  clear
+   44  aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 046402772087.dkr.ecr.us-east-1.amazonaws.com
+   45  cat .docker/config.json 
+   46  docker pull ip-172-31-82-125.ec2.internal:5000/nginx
+   47  cat .docker/config.json 
+   48  docker images
+   49  docker rmi ip-172-31-82-125.ec2.internal:5000/nginx
+   50  ls
+   51  cd docker-hub-demo/
+   52  ls
+   53  vi docker-hub-demo.yml
+   54  kubectl apply -f docker-hub-demo.yml
+   55  kubectl apply -f svc.yml
+   56  docker get po
+   57  kubectl get po
+   58  ls
+   59  kubectl delete docker-hub-demo.yml
+   60  kubectl delete svc.yml
+   61  kubectl delete -f svc.yml
+   62  kubectl delete -f docker-hub-demo.yml
+   63  ls
+   64  cd
+   65  ls
+   66  ls -a
+   67  cat .docker/config.json 
+   68  docker exit
+   69  docker login ip-172-31-82-125.ec2.internal:5000
+   70  cat .docker/config.json 
+   71  docker login ip-172-31-82-125.ec2.internal:5000
+   72  cat .docker/config.json 
+   73  cat .docker/config.json | base64
+   74  cd docker-hub-demo/
+   75  ls
+   76  vi docker-secret.yml 
+   77  cp docker-secret.yml docker-secret.yml.org
+   78  vi docker-secret.yml
+   79  cd ..
+   80  ls
+   81  pwd
+   82  ls
+   83  kubectl apply -f docker-hub-demo
+   84  kubectl delete -f docker-hub-demo
+   85  vi docker-hub-demo/docker-secret.yml
+   86  cd docker-hub-demo/
+   87  ls
+   88  cp docker-secret.yml.org docker-secret.yml
+   89  cd ..
+   90  cat .docker/config.json | base64
+   91  ls
+   92  vi docker-hub-demo/docker-secret.yml
+   93  kubectl apply -f docker-hub-demo/docker-secret.yml
+   94  vi docker-hub-demo/docker-secret.yml
+   95  ls
+   96  cat cd docker-hub-demo/
+   97  vi docker-hub-demo/docker-secret.yml
+   98  catdocker-hub-demo/docker-secret.yml
+   99  cat docker-hub-demo/docker-secret.yml
+  100  kubectl apply -f docker-hub-demo/docker-secret.yml
+  101  ls
+  102  kubectl apply -f docker-hub-demo
+  103  kubectl logs my-app-bfc87ccb6-rxbzx
+  104  kubectl delete -f docker-hub-demo
+  105  cat docker-hub-demo/docker-hub-demo.yml 
+  106  vi docker-hub-demo/docker-hub-demo.yml
+  107  cd docker-hub-demo/
+  108  ls
+  109  mv docker-hub-demo.yml deployment.yml
+  110  kubectl apply -f deployment.yml
+  111  kubectl get po
+  112  kubectl apply -f svc
+  113  kubectl apply -f svc.yml 
+  114  kubectl get po
+  115  kubectl logs my-app-5d884d7c4c-fxt5v
+  116  docker pull nginx
+  117  docker tag nginx:latest 046402772087.dkr.ecr.us-east-1.amazonaws.com/my-nginx:latest
+  118  docker rmi 046402772087.dkr.ecr.us-east-1.amazonaws.com/my-nginx:latest
+  119  docker tag nginx:latest 046402772087.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
+  120  docker push 046402772087.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
+  121  docker images
+  122  docker push 046402772087.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
+  123  docker images
+  124  docker rmi 046402772087.dkr.ecr.us-east-1.amazonaws.com/nginx
+  125  docker tag nginx:latest 046402772087.dkr.ecr.us-east-1.amazonaws.com/my-nginx:latest
+  126  docker push 046402772087.dkr.ecr.us-east-1.amazonaws.com/my-nginx:latest
+  127  ls
+  128  vi deployment.yml 
+  129  cat docker-secret.yml
+  130  cd ..
+  131  ls
+  132  kubectl apply -f docker-hub-demo/
+  133  docker get po
+  134  kubectl get po
+  135  kubectl delete -f docker-hub-demo/
+  136  ls
+  137  cd docker-hub-demo/
+  138  ls
+  139  vi deployment.yml
+  140  cd ..
+  141  kubectl apply -f docker-hub-demo/
+  142  kubectl get po
+  143  kubectl delete -f docker-hub-demo/
+  144  kubectl apply -f docker-hub-demo/
+  145  kubectl get po
+  146  kubectl delete -f docker-hub-demo/
+  147  ls
+  148  kubectl delete -f docker-hub-demo/deployment.yml 
+  149  kubectl apply -f docker-hub-demo/deployment.yml 
+  150  kubectl get po
+  151  kubectl delete -f docker-hub-demo/deployment.yml 
+  152  kubectl apply -f docker-hub-demo/deployment.yml 
+  153  kubectl get po
+  154  ls
+  155  cd
+  156  mkdir test
+  157  cd test
+  158  vi Dockerfile
+  159  ls
+  160  cat Dockerfile 
+  161  docker pull tomcat:8.5.50-jdk8
+  162  docker build -t test .
+  163  docker  run -d --name web -p 80:5000 test
+  164  docker ps
+  165  docker logs web
+  166  docker logs -f web
+  167  docker rm -f web
+  168  docker  run -d --name web -p 5000:5000 test
+  169  docker logs -f web
+  170  docker rm -f web
+  171  docker build -t test .
+  172  docker  run -d --name web -p 5000:5000 test
+  173  docker logs -f web
+  174  docker rm -f web
+  175  docker images
+  176  docker rmi test
+  177  cd ..
+  178  ls
+  179  ls -R test/
+  180  cd test/
+  181  ls
+  182  rm soaster-web-1.0-execute.war 
+  183  vi Dockerfile
+  184  ls
+  185  ls -a
+  186  ls 
+  187  vi .docker/config.json 
+  188  docker logout ip-172-31-82-125.ec2.internal:5000
+  189  pwd
+  190  kubectl get secrets
+  191  kubectl get po
+  192  ls
+  193  kebectl delete -f docker-hub-demo
+  194  kubectl delete -f docker-hub-demo
+  195  kubectl get po
+  196  ls test/
+  197  cat test/Dockerfile 
+  198  pwd
+  199  ls
+  200  pwd
+  201  cd /etc
+  202  ls
+  203  cd docker
+  204  ls
+  205  cd certs.d/
+  206  ls
+  207  sudo mv 'ip-172-31-82-125.ec2.internal:5000' '_ip-172-31-82-125.ec2.internal:5000'
+  208  sudo mv '_ip-172-31-82-125.ec2.internal:5000' 'ip-172-31-82-125.ec2.internal:5000'
+  209  ls
+  210  kubectl create secret docker-registry my-registry-key --docker-server=ip-172-31-82-125.ec2.internal:5000 
+  211  kubectl create secret docker-registry my-registry-key --docker-server=ip-172-31-82-125.ec2.internal:5000 --docker-username='' --docker-password=''
+  212  kubectl create secret docker-registry my-registry-key --docker-server=ip-172-31-82-125.ec2.internal:5000 --docker-username=clarusway --docker-password=clarusway
+  213  ls
+  214  cd
+  215  ls
+  216  cd docker-hub-demo
+  217  kubectl apply -f ./deployment.yml
+  218  kubectl get po
+  219  kubectl delete -f ./deployment.yml
+  220  kubectl get po
+  221  kubectl get secrets
+  222  kubectl delete secrets my-registry-key
+  223  docker login ip-172-31-82-125.ec2.internal:5000
+  224  cat /home/ubuntu/.docker/config.json
+  225  ls
+  226  cat deployment.yml
+  227  dcoker pull ip-172-31-82-125.ec2.internal:5000/nginx
+  228  docker pull ip-172-31-82-125.ec2.internal:5000/nginx
+  229  docker rm ip-172-31-82-125.ec2.internal:5000/nginx:latest
+  230  docker rmi ip-172-31-82-125.ec2.internal:5000/nginx:latest
+  231  kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
+  232  cd
+  233  kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
+  234  kubectl apply -f docker-hub-demo/deployment.yml
+  235  kubectl get po
+  236  kubectl delete -f docker-hub-demo/deployment.yml
+  237  vi .docker/config.json 
+  238  kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
+  239  kubectl delete secret my-registry-key
+  240  kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
+  241  ls
+  242  kubectl apply -f docker-hub-demo/deployment.yml
+  243  kubectl getpo
+  244  kubectl get po
+  245  kubectl delete -f docker-hub-demo/deployment.yml
+  246  kubectl delete secret my-registry-key
+  247  cd /etc/docker/
+  248  ls
+  249  cd certs.d/
+  250  ls
+  251  cd
+  252  docker logout ip-172-31-82-125.ec2.internal:5000
+  253  docker login ip-172-31-82-125.ec2.internal:5000
+  254  kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson
+  255  kubectl delete -f docker-hub-demo/deployment.yml
+  256  kubectl apply -f docker-hub-demo/deployment.yml
+  257  kubectl get po
+  258  kubectl delete -f docker-hub-demo/deployment.yml
+  259  docker logout ip-172-31-82-125.ec2.internal:5000
+  260  kubectl delete my-registry-key
+  261  kubectl delete secrets my-registry-key
+  262  ls,
+  263  cd docker-hub-demo/
+  264  ls
+  265  cat docker-secret.yml
+  266  ls
+  267  cat deployment.yml
+  268  ls
+  269  cat docker-secret.yml.org
+  270  ls
+  271  cp deployment.yml _deployment.yml
+  272  cd
+  273  docker logout ip-172-31-82-125.ec2.internal:5000
+  274  vi docker-hub-demo/deployment.yml 
+  275  kubectl get po
+  276  kubectl apply  -f docker-hub-demo/deployment.yml 
+  277  kubectl get po
+  278  kubectl get po -o wide
+  279  pwd
+  280  ls
+  281  kubectl apply -f docker-hub-demo/svc.yml 
+  282  kubectl get svc
+  283  kubectl get po
+  284  kubectl get po -o wide
+  285  ls
+  286  kubectl describe svc my-app
+  287  ls
+  288  kubectl delete -f docker-hub-demo/
+  289  ls
+  290  cd docker-hub-demo/
+  291  ls
+  292  mv _deployment.yml _deployment.yml.old
+  293  ls
+  294  mv docker-secret.yml docker-secret.yml.old
+  295  ls
+  296  vi deployment.yml
+  297  vi svc.yml 
+  298  cd ..
+  299  kubectl apply -f de
+  300  kubectl apply -f docker-hub-demo/
+  301  kubectl get svc -o wide
+  302  kubectl describe svc my-app
+  303  curl 172.16.210.147:80
+  304  ls
+  305  kubectl delete -f docker-hub-demo/
+  306  vi docker-hub-demo/svc.yml 
+  307  kubectl apply -f docker-hub-demo/
+  308  kubectl delete -f docker-hub-demo/
+  309  pwd
+  310  ls
+  311  cd docker-hub-demo/
+  312  ls
+  313  cat deployment.yml
+  314  ls
+  315  cat svc.yml
+  316* 
+  317  cat docker-secret.yml.org
+  318  kubectl get no
+  319  kubectl get all
+  320  mkdir secrets
+  321  pwd
+  322  ls
+  323  cd secrets
+  324  echo -n 'admin' > ./username.txt
+  325  echo -n '1f2d1e2e67df' > ./password.txt
+  326  ls
+  327  cat *
+  328  ls
+  329  cat username.txt
+  330  cat password.txt
+  331  clear
+  332  kubectl create secret generic db-user-pass --from-file=./username.txt --from-file=./password.txt
+  333  kubectl get secret
+  334  kubectl get secret -o yaml
+  335  ls
+  336  kubectl get secrets
+  337  kubectl delete secrets my-registry-key
+  338  kubectl get secrets
+  339  kubectl get secrets db-user-pass -o yaml
+  340  base64
+  341  kubectl create secret --help
+  342  kubectl get secrets db-user-pass -o yaml
+  343  kubectl create secret generic db-user-pass --from-file=username=./username.txt --from-file=password=./password.txt
+  344  kubectl delete secrets db-user-pass
+  345  kubectl create secret generic db-user-pass --from-file=username=./username.txt --from-file=password=./password.txt
+  346  kubectl get secrets db-user-pass -o yaml
+  347  ls
+  348  cat password.txt 
+  349  vi password.txt
+  350  kubectl get secrets
+  351  kubectl describe secrets/db-user-pass
+  352  kubectl get secrets db-user-pass -o yaml
+  353  kubectl get sc db-user-pass -o yaml
+  354  kubectl get --help
+  355  kubectl get sec db-user-pass -o yaml
+  356  kubectl get sc db-user-pass -o yaml
+  357  kubectl get sc 
+  358  kubectl get  secret
+  359  gpg 
+  360  echo -n 'admin' | base64
+  361  echo -n '1f2d1e2e67df' | base64
+  362  vi secret.yaml
+  363  kubectl get  secret
+  364  kubectl apply -f ./secret.yaml
+  365  kubectl get  secret mysecret -o yaml 
+  366  vi mysecret-pod.yaml
+  367  kubectl apply -f mysecret-pod.yaml
+  368  kubectl get po
+  369  kubectl exec -it secret-env-pod -- bash
+  370  ls
+  371  cat mysecret-pod.yaml
+  372  cat secret.yaml
+  373  cd ..
+  374  mkdir k8s
+  375  pwd
+  376  cd k8s
+  377  vi deployment.yaml
+  378  vi service.yaml
+  379  ls
+  380  cd ..
+  381  ls
+  382  kubectl apply -f k8s
+  383  vi k8s/service.yaml 
+  384  kubectl apply -f k8s
+  385  curl http://3.239.88.208:30036
+  386  cat k8s/service.yaml 
+  387  kubectl get svc demo-service -o wide
+  388  pwd
+  389  ls
+  390  kubectl delete -f k8s
+  391  cd k8s/
+  392  ls
+  393  vi deployment.yaml
+  394  kubectl create configmap demo-config --from-literal=greeting=Halo --from-literal=test=GoodMorning 
+  395  kubectl get configmap/demo-config -o yaml
+  396  pwd
+  397  kubectl apply -f .
+  398  kubectl get svc
+  399  curl http://3.239.88.208:30036
+  400  kubectl get cm 
+  401  kubectl get cm demo-config -o text
+  402  kubectl get cm demo-config -o json
+  403  kubectl get cm demo-config -o yaml
+  404  pwd
+  405  kubectl delete -f .
+  406  kubectl apply -f .
+  407  curl http://3.239.88.208:30036
+  408  echo "greeting: Hei" > config
+  409  ls
+  410  cat config
+  411  ls
+  412  cat config
+  413  kubectl create configmap demo-config --from-file=./config
+  414  kubectl delete configmap demo-config
+  415  kubectl create configmap demo-config --from-file=./config
+  416  kubectl get cm demo-config 
+  417  kubectl get cm demo-config -o yaml
+  418  pwd
+  419  vi deployment.yaml 
+  420  kubetl apply -f .
+  421  kubectl apply -f .
+  422  curl http://3.239.88.208:30036
+  423  kubectl delete cm demo-config 
+  424  kubectl delete -f .
+  425  pwd
+  426  ls
+  427  vi deployment.yaml
+  428  kubectl create configmap demo-config --from-file=./config
+  429  kubectl apply -f .
+  430  kubectl get po
+  431  ls
+  432  kubectl exec -f demo-748fc9446d-5z4c9 -- sh
+  433  kubectl get po
+  434  kubectl exec -it demo-748fc9446d-5z4c9 -- sh
+  435  vi config 
+  436  ls
+  437  kubectl get cm
+  438  history
+  439  kubectl create configmap demo-config --from-file=./config
+  440  kubectl apply -f .
+  441  kubectl get po
+  442  kubectl exec -it demo-748fc9446d-5z4c9 -- sh
+  443  history >> /tmp/log.txt
