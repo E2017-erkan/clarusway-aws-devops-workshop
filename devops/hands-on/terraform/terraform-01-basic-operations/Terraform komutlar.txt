@@ -1,0 +1,24 @@
+ vim tf-example.tf
+   26  terraform init
+   27  terraform plan
+   28  ls
+   29  ls -al
+   30  cat .terraform.lock.hcl 
+   31  terraform apply --help
+   32  terraform apply -auto-approve
+   33  ls
+   34  vim tf-example.tf 
+   35  terraform apply -auto-approve
+   36  rm tf-example.tf 
+   37  vim tf-example.tf
+   38  terraform apply -auto-approve
+   39  terraform state list
+   40  terraform state --help
+   41  terraform state show
+   42  terraform state show aws_instance.tf-example-ec2
+   43  ls
+   44  ls -al
+   45  terraform destroy --help
+   46  terraform destroy -auto-approve
+
+https://dreampuf.github.io/GraphvizOnline (komutları grafiğe dönüştürüyor)
