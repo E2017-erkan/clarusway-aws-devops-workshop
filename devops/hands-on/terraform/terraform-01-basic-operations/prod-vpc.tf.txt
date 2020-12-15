@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module "tf-vpc" {
   source = "../../modules/main-vpc"
   environment = "DEV"
@@ -12,4 +13,20 @@ module "tf-vpc" {
   }
 output "vpc-cidr-block" {
   value = module.tf-vpc.vpc_cidr
+=======
+module "tf-vpc" {
+  source = "../../modules/main-vpc"
+  environment = "DEV"
+  }
+output "vpc-cidr-block" {
+  value = module.tf-vpc.vpc_cidr
+}
+11:54
+module "tf-vpc" {
+  source = "../../modules/main-vpc"
+  environment = "PROD"
+  }
+output "vpc-cidr-block" {
+  value = module.tf-vpc.vpc_cidr
+>>>>>>> 885932f6509772ef589ddf96641f17b935a868f6
 }
