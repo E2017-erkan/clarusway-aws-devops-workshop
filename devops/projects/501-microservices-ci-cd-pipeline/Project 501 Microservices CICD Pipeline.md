@@ -960,8 +960,24 @@ git checkout feature/msp-13
 ``` bash
 mkdir jenkins
 ```
-
-* Create a Jenkins job with name of `petclinic-ci-job` with following script to unit tests and configure a webhook to trigger the job. Jenkins `CI Job` should be triggered to run on each commit of `feature**` and `bugfix**` branches and on each `PR` merge to `dev` branch. Select "GitHub hook trigger for GITScm polling" in "Build Triggers" section.
+* Create a Jenkins job with the name of `petclinic-ci-job`: 
+  * Select `Freestyle project` and click `OK`
+  * Select github project and write the url to your repository's page into `Project url` (https://github.com/[your-github-account]/petclinic-microservices)
+  * Under the `Source Code Management` select `Git` 
+  * Write the url of your repository into the `Repository URL` (https://github.com/[your-github-account]/petclinic-microservices.git)
+  * Add `*/dev`, `*/feature**` and `*/bugfix**` branches to `Branches to build`
+  * Select `GitHub hook trigger for GITScm polling` under  `Build triggers`
+  * Select `Add timestamps to the Console Output` under `Build Environment`
+  * Click `Add build step` under `Build` and select `Execute Shell`
+  * Write below script into the `Command`
+    ```bash
+    echo 'Running Unit Tests on Petclinic Application'
+    docker run --rm -v $HOME/.m2:/root/.m2 -v `pwd`:/app -w /app maven:3.6-openjdk-11 mvn clean test
+    ```
+  * Click `Add post-build action` under `Post-build Actions` and select `Record jacoco coverage report`
+  * Click `Save`
+  
+* Jenkins `CI Job` should be triggered to run on each commit of `feature**` and `bugfix**` branches and on each `PR` merge to `dev` branch.
 
 * Prepare a script for Jenkins CI job (covering Unit Test only) and save it as `jenkins-petclinic-ci-job.sh` under `jenkins` folder.
 
@@ -969,9 +985,6 @@ mkdir jenkins
 echo 'Running Unit Tests on Petclinic Application'
 docker run --rm -v $HOME/.m2:/root/.m2 -v `pwd`:/app -w /app maven:3.6-openjdk-11 mvn clean test
 ```
-
-* Add `post-build action` to Jenkins Job to record `Jacoco` Coverage Report.
-
 * Create a webhook for Jenkins CI Job; 
 
   + Go to the project repository page and click on `Settings`.
@@ -979,10 +992,8 @@ docker run --rm -v $HOME/.m2:/root/.m2 -v `pwd`:/app -w /app maven:3.6-openjdk-1
   + Click on the `Webhooks` on the left hand menu, and then click on `Add webhook`.
 
   + Copy the Jenkins URL, paste it into `Payload URL` field, add `/github-webhook/` at the end of URL, and click on `Add webhook`.
-
   
-
-``` text
+  ``` text
   http://[jenkins-server-hostname]:8080/github-webhook/
   ```
 
