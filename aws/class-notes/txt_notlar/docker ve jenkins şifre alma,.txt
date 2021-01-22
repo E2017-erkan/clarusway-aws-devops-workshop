@@ -1,8 +1,0 @@
-
-docker için:
-docker exec -it jenkins bash
-cat /var/jenkins_home/secrets/initialAdminPassword
-
-jenkins için:
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-

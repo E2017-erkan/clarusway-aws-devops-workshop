@@ -1,6 +1,6 @@
 Boto
 sudo apt update
 sudo apt upgrade
-pip3 install boto3pip3 freeze = pip3 list-->PYTHON File
+pip3 install boto3 pip3 freeze = pip3 list-->PYTHON File
 import boto3s3 = boto3.resource('s3')for bucket in s3.buckets.all() :
     print(bucket.name)
